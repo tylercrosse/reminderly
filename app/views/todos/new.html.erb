@@ -1,9 +1,3 @@
-<%= form_for @todo do |f| %>
-  <p><%= f.label :body %></p>
-  <%= f.text_field :body %>
+<h2>New Todo</h2>
 
-  <p><%= f.label :author %></p>
-  <%= f.text_field :author %>
-
-  <%= f.submit %>
-<% end %>
+<%= render 'form' %>

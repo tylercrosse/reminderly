@@ -1,9 +1,7 @@
-<%= form_for @todo do |f| %>
-  <p><%= f.label :body %></p>
-  <%= f.text_field :body %>
+<h2>Edit Todo</h2>
 
-  <p><%= f.label :author %></p>
-  <%= f.text_field :author %>
+<%= render 'form' %>
 
-  <%= f.submit %>
-<% end %>
+<p><%= link_to 'Delete Todo', todo_path(@todo),
+        method: :delete,
+        data: { confirm: 'Are you sure?' } %></p>

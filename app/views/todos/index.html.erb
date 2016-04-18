@@ -1,12 +1,9 @@
-<h1>Todos Index</h1>
+<h2>Todos Index</h2>
 
 <ul>
   <% @todos.each do |todo| %>
     <li>
       <p><%= link_to todo.body, todo %></p>
-      <p><%= link_to 'Delete Todo', todo_path(todo),
-              method: :delete,
-              data: { confirm: 'Are you sure?' } %></p>
     </li>
   <% end %>
 </ul>
