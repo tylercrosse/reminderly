@@ -8,11 +8,22 @@ class TodosController < ApplicationController
   end
 
   def new
+    @todo = Todo.new
   end
 
   def create
     @todo = Todo.create!(todo_params)
     redirect_to todos_path
+  end
+
+  def edit
+    @todo = Todo.find(params[:id])
+  end
+
+  def update
+    @todo = Todo.find(params[:id])
+    @todo.update(todo_params)
+    redirect_to todo_path(@todo)
   end
 
   def destroy
