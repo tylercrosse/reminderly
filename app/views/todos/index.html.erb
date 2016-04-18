@@ -3,7 +3,11 @@
 <ul>
   <% @todos.each do |todo| %>
     <li>
-      <p><%= link_to todo.body, todo_path(todo) %></p>
+      <p><%= link_to todo.body, todo %></p>
+      <p><%= link_to 'Delete Todo', todo_path(todo),
+              method: :delete,
+              data: { confirm: 'Are you sure?' } %></p>
     </li>
   <% end %>
 </ul>
+<h2><%= link_to "New Todo", new_todo_path %></h2>
